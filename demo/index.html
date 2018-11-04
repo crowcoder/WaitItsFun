@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Game Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+
+
+</head>
+
+<body>
+    <div class="modal fade" tabindex="-1" role="dialog" id="waitmodal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Please Play While You Wait</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="gameDiv" style="max-width:640px;margin:auto;"></div>
+                </div>
+                <div class="modal-footer">
+                    <div class="alert alert-success" role="alert" id="doneDiv" style="display:none;">
+                        <span style="font-size:24px;">Operation Complete</span>
+                        <button type="button" class="btn btn-default btn-lg" onclick="hide();">Pause</button>
+                        <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal" onclick="hide();">
+                            Get Back To Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br /><br />
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Generic Form</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <div class="form-group">
+                    <label for="exampleInputFname">First Name</label>
+                    <input type="text" class="form-control" id="exampleInputFname" placeholder="First Name">
+                </div>
+                <label for="exampleInputLname">Last Name</label>
+                <input type="text" class="form-control" id="exampleInputLname" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputBank">Bank Account Number</label>
+                <input type="text" class="form-control" id="exampleInputBank" placeholder="Bank Account Number">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Check me out
+                </label>
+            </div>
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#waitmodal" onclick="delay();">
+                 SAVE
+            </button>
+            <div>
+                <br />
+                <span style="font-size:24pt;"><a href="../index.html">&lt; Back to Wait It's Fun <img src="../assets/wait_small.png" /></a></span>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function delay(){
+            window.setTimeout(
+                function(){
+                    document.querySelector("#doneDiv").style.display = "block";
+                }, 3000
+            );        
+        }
+        
+        function hide(){
+            waititsfun.pause();
+            //document.querySelector("#doneDiv").style.display = "none";
+        }
+    </script>
+   
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+        <script src="../frog/js/game.js"></script>
+    <!-- <script src="https://waitgames.azureedge.net/frog/game.js" integrity="sha384-qoRzVFhcu3MPqU4+hUIAG45mJWAXYwf1QDlkHQY2519KjBjFyETk7mTDV/wY9AD1"
+        crossorigin="anonymous"></script> -->
+</body>
+
+</html>
